@@ -23,7 +23,7 @@ public class Main {
     private static void createParticipant() {
         arrayParticipant = new Participant[]{
                 new Human("Ivan", 130, 8),
-                new Robot("Galaxy", 130, 10),
+                new Robot("Galaxy", 115, 10),
                 new Cat("Bonya", 130, 11)
         };
     }
