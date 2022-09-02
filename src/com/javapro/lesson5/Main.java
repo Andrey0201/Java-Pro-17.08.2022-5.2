@@ -18,11 +18,8 @@ public class Main {
     public static void main(String[] args) {
         createLets();
         createParticipant();
-
         actionNewAllParticipant();
-
     }
-
     private static void createParticipant() {
         arrayParticipant = new Participant[]{
                 new Human("Ivan", 130, 8),
@@ -37,24 +34,9 @@ public class Main {
                 new Wall(9),
         };
     }
-
-    //    private static void actionAllParticipant() {
-//        for (Participant p : participants) {
-//            if (p.getDistanceLimitRun() >= lets[0].getValue() && p.getLimitJump() >= lets[1].getValue()) {
-//                p.run();
-//                p.jump();
-//                System.out.println(p.toString() + lets[0].toString());
-//                System.out.println(p.toString() + lets[1].toString());
-//            }
-//            if (p.getDistanceLimitRun() < lets[0].getValue()) {
-//                System.out.println(p.toString() + " don't " + lets[0].toString());
-//                continue;
-//            }
-//            if (p.getLimitJump() < lets[1].getValue()) {
-//                System.out.println(p.toString() + " don't " + lets[1].toString());
-//            }
-//        }
-//    }
+/**
+ *  All's Running and Jumping without  Let
+ **/
     private static void actionAllParticipant() {
         for (Participant participant : arrayParticipant) {
             for (Let let : arrayLets) {
@@ -68,7 +50,9 @@ public class Main {
         }
 
     }
-
+    /**
+     *  All's Running and Jumping with  Let and with limit value
+     **/
     private static void actionNewAllParticipant() {
         for (Participant participant : arrayParticipant) {
             for (Let let: arrayLets) {

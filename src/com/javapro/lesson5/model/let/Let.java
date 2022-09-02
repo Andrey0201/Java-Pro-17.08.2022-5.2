@@ -1,6 +1,5 @@
 package com.javapro.lesson5.model.let;
 
-import com.javapro.lesson5.model.participant.Participant;
 import com.javapro.lesson5.service.LetType;
 
 abstract public class Let  {
