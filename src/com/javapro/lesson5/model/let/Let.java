@@ -1,6 +1,9 @@
 package com.javapro.lesson5.model.let;
 
-abstract public class Let {
+import com.javapro.lesson5.model.participant.Participant;
+import com.javapro.lesson5.service.LetType;
+
+abstract public class Let  {
     protected int value;
 
     public Let(int value) {
@@ -18,5 +21,9 @@ abstract public class Let {
     @Override
     public String toString() {
         return overCome() + " Let ";
+    }
+
+    public LetType getLetType() {
+        return null;
     }
 }
