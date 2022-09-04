@@ -51,13 +51,8 @@ public class Main {
                     break;
                 }
             }
-
-
         }
-
     }
-
-
 }
 
 
