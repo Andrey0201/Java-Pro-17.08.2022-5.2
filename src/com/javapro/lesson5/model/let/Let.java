@@ -22,7 +22,5 @@ abstract public class Let  {
         return overCome() + " Let ";
     }
 
-    public LetType getLetType() {
-        return null;
-    }
+    public abstract LetType getLetType();
 }

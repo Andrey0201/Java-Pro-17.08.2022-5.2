@@ -5,33 +5,47 @@ abstract public class Participant {
 
 
     protected String name;
-    protected int distanceLimitRun;
-    protected int limitJump;
+    private int distanceLimitRun;
+    private int distanceLimitJump;
 
 
-    public Participant(String name, int distanceLimitRun, int limitJump) {
+    public Participant(String name, int distanceLimitRun, int distanceLimitJump) {
         this.name = name;
         this.distanceLimitRun = distanceLimitRun;
-        this.limitJump = limitJump;
+        this.distanceLimitJump = distanceLimitJump;
     }
 
     public void run() {
+        System.out.println("Run");
+    }
+
+    public boolean run(int distance) {
+        if (distanceLimitRun >= distance) {
+            run();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void jump() {
+        System.out.println("Jump");
     }
+
+    public boolean jump(int distance) {
+        if (distanceLimitJump >= distance) {
+            jump();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     public String getName() {
         return name;
     }
 
-    public int getDistanceLimitRun() {
-        return distanceLimitRun;
-    }
-
-    public int getLimitJump() {
-        return limitJump;
-    }
 
     @Override
     public String toString() {
