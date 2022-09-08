@@ -6,6 +6,7 @@ public class Cat extends Participant {
         super(name, distanceLimitRun, limitJump);
     }
 
+
     @Override
     public String toString() {
         return super.toString() + "Cat " + name + " ";

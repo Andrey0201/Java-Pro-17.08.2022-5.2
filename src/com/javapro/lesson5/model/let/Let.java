@@ -1,26 +1,25 @@
 package com.javapro.lesson5.model.let;
 
-import com.javapro.lesson5.service.LetType;
 
-abstract public class Let  {
-    protected int value;
+import com.javapro.lesson5.model.participant.Participant;
 
+public abstract class Let {
+   protected int value;
+    Participant participant;
     public Let(int value) {
         this.value = value;
     }
 
-    public String overCome() {
-        return "overCome";
-    }
+    public abstract void overCome(Participant participant);
 
     public int getValue() {
         return value;
     }
 
+
     @Override
     public String toString() {
-        return overCome() + " Let ";
+        return " Let ";
     }
 
-    public abstract LetType getLetType();
 }

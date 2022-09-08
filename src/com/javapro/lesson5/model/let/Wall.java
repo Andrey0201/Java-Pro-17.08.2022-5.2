@@ -1,6 +1,7 @@
 package com.javapro.lesson5.model.let;
 
-import com.javapro.lesson5.service.LetType;
+
+import com.javapro.lesson5.model.participant.Participant;
 
 public class Wall extends Let{
 
@@ -9,13 +10,16 @@ public class Wall extends Let{
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "Wall" +
-                "distance " + value + " metres";
+    public void overCome(Participant participant) {
+        participant.jump();
+
     }
 
     @Override
-    public LetType getLetType() {
-        return LetType.WALL;
+    public String toString() {
+        return super.toString() + "Wall" +
+                "distance " + getValue() + " metres";
     }
+
+
 }

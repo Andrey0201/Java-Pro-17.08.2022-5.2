@@ -7,6 +7,8 @@ public class Robot extends Participant {
         super(name, distanceLimitRun, limitJump);
     }
 
+
+
     @Override
     public String toString() {
         return super.toString() + "Robot " + name + " ";

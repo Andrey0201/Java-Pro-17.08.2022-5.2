@@ -7,6 +7,8 @@ public class Human extends Participant {
         super(name, distanceLimitRun, limitJump);
     }
 
+
+
     @Override
     public String toString() {
         return super.toString() + "Human " + name + " ";

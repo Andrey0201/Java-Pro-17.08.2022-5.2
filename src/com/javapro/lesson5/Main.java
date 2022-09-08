@@ -8,24 +8,27 @@ import com.javapro.lesson5.model.participant.Robot;
 import com.javapro.lesson5.model.participant.Participant;
 import com.javapro.lesson5.model.let.Let;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 
 public class Main {
     private static Participant[] arrayParticipant = null;
     private static Let[] arrayLets = null;
 
     public static void main(String[] args) {
-        createLets();
         createParticipant();
+        createLets();
         actionAllParticipant();
-        Participant cat = new Cat("Myrca", 130, 5);
-        cat.jump();
-        cat.run();
+        System.out.println(Arrays.toString(arrayParticipant));
+
+
     }
 
     private static void createParticipant() {
         arrayParticipant = new Participant[]{
-                new Human("Ivan", 130, 8),
-                new Robot("Galaxy", 115, 10),
+                new Human("Ivan", 130, 10),
+                new Robot("Galaxy", 130, 10),
                 new Cat("Bonya", 130, 11)
         };
     }
@@ -40,18 +43,22 @@ public class Main {
     private static void actionAllParticipant() {
         for (Participant participant : arrayParticipant) {
             for (Let let : arrayLets) {
-                boolean b = switch (let.getLetType()) {
-                    case TREADMILL -> participant.run(let.getValue());
-                    case WALL -> participant.jump(let.getValue());
-                };
-                if (b) {
-                    System.out.println(participant.toString() + let.toString());
-                } else {
-                    System.out.println(participant.toString() + " can't " + let.toString());
-                    break;
-                }
+                System.out.print(participant.toString());
+                let.overCome(participant);
             }
+
         }
+
+    }private static void actionAllParticipantWithLimit() {
+        for (Participant participant : arrayParticipant) {
+            for (Let let : arrayLets) {
+
+                System.out.print(participant.toString());
+                let.overCome(participant);
+            }
+
+        }
+
     }
 }
 

@@ -1,6 +1,7 @@
 package com.javapro.lesson5.model.let;
 
-import com.javapro.lesson5.service.LetType;
+
+import com.javapro.lesson5.model.participant.Participant;
 
 public class Treadmill extends Let {
 
@@ -9,14 +10,16 @@ public class Treadmill extends Let {
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "Treadmill " +
-                "distance " + value + " metres";
+    public void overCome(Participant participant) {
+        participant.run();
     }
 
     @Override
-    public LetType getLetType() {
-        return LetType.TREADMILL;
+    public String toString() {
+        return super.toString() + "Treadmill " +
+                "distance " +getValue()+ " metres";
     }
+
+
 }
 
