@@ -27,7 +27,7 @@ public class Main {
 
     private static void createParticipant() {
         arrayParticipant = new Participant[]{
-                new Human("Ivan", 130, 10),
+                new Human("Ivan", 115, 10),
                 new Robot("Galaxy", 130, 10),
                 new Cat("Bonya", 130, 11)
         };
@@ -49,12 +49,16 @@ public class Main {
 
         }
 
-    }private static void actionAllParticipantWithLimit() {
+    }
+
+    private static void actionAllParticipantWithLimit() {
         for (Participant participant : arrayParticipant) {
             for (Let let : arrayLets) {
-
-                System.out.print(participant.toString());
-                let.overCome(participant);
+                if (participant.getDistanceLimitRun() >= let.getValue()) {
+                    let.overCome(participant);
+                }
+                else System.out.println("can't");
+                break;
             }
 
         }

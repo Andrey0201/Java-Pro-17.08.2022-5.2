@@ -11,13 +11,17 @@ public class Treadmill extends Let {
 
     @Override
     public void overCome(Participant participant) {
-        participant.run();
+        if (participant.getDistanceLimitRun() >= getValue()) {
+
+            participant.run();
+        }
+
     }
 
     @Override
     public String toString() {
         return super.toString() + "Treadmill " +
-                "distance " +getValue()+ " metres";
+                "distance " + getValue() + " metres";
     }
 
 

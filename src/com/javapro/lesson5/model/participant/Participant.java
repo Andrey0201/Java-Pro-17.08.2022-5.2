@@ -14,7 +14,9 @@ abstract public class Participant {
         this.name = name;
         this.distanceLimitRun = distanceLimitRun;
         this.distanceLimitJump = distanceLimitJump;
+
     }
+
 
     public  void run(){
         System.out.println("Run");
@@ -26,11 +28,21 @@ abstract public class Participant {
 
     }
 
-
-
     @Override
     public String toString() {
         return "Participant ";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getDistanceLimitRun() {
+        return distanceLimitRun;
+    }
+
+    public int getDistanceLimitJump() {
+        return distanceLimitJump;
     }
 }
 
