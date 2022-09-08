@@ -4,7 +4,7 @@ package com.javapro.lesson5.model.let;
 import com.javapro.lesson5.model.participant.Participant;
 
 public abstract class Let {
-   protected int value;
+   private int value;
     Participant participant;
     public Let(int value) {
         this.value = value;

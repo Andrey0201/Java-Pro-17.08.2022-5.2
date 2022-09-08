@@ -9,7 +9,6 @@ abstract public class Participant {
     private int distanceLimitJump;
 
 
-
     public Participant(String name, int distanceLimitRun, int distanceLimitJump) {
         this.name = name;
         this.distanceLimitRun = distanceLimitRun;
@@ -18,12 +17,12 @@ abstract public class Participant {
     }
 
 
-    public  void run(){
+    public void run() {
         System.out.println("Run");
     }
 
 
-    public  void jump(){
+    public void jump() {
         System.out.println("Jump");
 
     }

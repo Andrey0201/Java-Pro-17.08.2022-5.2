@@ -8,9 +8,6 @@ import com.javapro.lesson5.model.participant.Robot;
 import com.javapro.lesson5.model.participant.Participant;
 import com.javapro.lesson5.model.let.Let;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 
 public class Main {
     private static Participant[] arrayParticipant = null;
@@ -20,7 +17,7 @@ public class Main {
         createParticipant();
         createLets();
         actionAllParticipant();
-        System.out.println(Arrays.toString(arrayParticipant));
+        actionAllParticipantWithLimit();
 
 
     }
@@ -54,17 +51,16 @@ public class Main {
     private static void actionAllParticipantWithLimit() {
         for (Participant participant : arrayParticipant) {
             for (Let let : arrayLets) {
-                if (participant.getDistanceLimitRun() >= let.getValue()) {
-                    let.overCome(participant);
-                }
-                else System.out.println("can't");
-                break;
+                let.overCome(participant);
             }
+
 
         }
 
     }
+
 }
+
 
 
 

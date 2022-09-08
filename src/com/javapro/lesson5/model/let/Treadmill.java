@@ -11,10 +11,10 @@ public class Treadmill extends Let {
 
     @Override
     public void overCome(Participant participant) {
-        if (participant.getDistanceLimitRun() >= getValue()) {
-
+        if (participant.getDistanceLimitRun()>=getValue()){
             participant.run();
         }
+        else System.out.println("can't run");
 
     }
 
