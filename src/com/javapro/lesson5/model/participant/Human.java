@@ -7,11 +7,19 @@ public class Human extends Participant {
         super(name, distanceLimitRun, limitJump);
     }
 
-
+    @Override
+    public void run() {
+        System.out.println("Human " + getName() + " Run");
+    }
 
     @Override
-    public String toString() {
-        return super.toString() + "Human " + name + " ";
+    public void jump() {
+        System.out.println("Human " + getName() + " Jump");
+    }
+
+    @Override
+    public String printName() {
+        return "Participant human " + getName();
     }
 }
 

@@ -6,9 +6,18 @@ public class Cat extends Participant {
         super(name, distanceLimitRun, limitJump);
     }
 
+    @Override
+    public void run() {
+        System.out.println("Cat " + getName() + " Run");
+    }
 
     @Override
-    public String toString() {
-        return super.toString() + "Cat " + name + " ";
+    public void jump() {
+        System.out.println("Cat " + getName() + " Jump");
+    }
+
+    @Override
+    public String printName() {
+        return "Participant cat " + getName();
     }
 }

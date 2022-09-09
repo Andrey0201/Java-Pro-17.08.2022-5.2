@@ -10,11 +10,21 @@ public class Wall extends Let {
     }
 
     @Override
-    public void overCome(Participant participant) {
-        if (participant.getDistanceLimitJump() >= getValue()) {
+    public boolean overCome(Participant participant) {
+        boolean isOverCome = participant.getDistanceLimitJump() >= getValue();
+        if (isOverCome) {
             participant.jump();
-        } else System.out.println("can't run");
+            System.out.println(participant.printName() + printLet());
+        } else {
+            System.out.println(participant.printName() + " can't " + printLet() +
+                    "Over come " + participant.getDistanceLimitJump() + " meters");
+        }
+        return isOverCome;
+    }
 
+    @Override
+    public String printLet() {
+        return " overcome Let wall height " + getValue() + " meters. ";
     }
 
 
@@ -23,6 +33,4 @@ public class Wall extends Let {
         return super.toString() + "Wall" +
                 "distance " + getValue() + " metres";
     }
-
-
 }

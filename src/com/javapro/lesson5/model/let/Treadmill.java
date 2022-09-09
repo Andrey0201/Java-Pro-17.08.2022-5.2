@@ -10,20 +10,21 @@ public class Treadmill extends Let {
     }
 
     @Override
-    public void overCome(Participant participant) {
-        if (participant.getDistanceLimitRun()>=getValue()){
+    public boolean overCome(Participant participant) {
+        boolean isOverCome = participant.getDistanceLimitRun() >= getValue();
+        if (isOverCome) {
             participant.run();
+            System.out.println(participant.printName() + printLet());
+        } else {
+            System.out.println(participant.printName() + " can't " + printLet() +
+                    "Over come " + participant.getDistanceLimitRun() + " metres");
         }
-        else System.out.println("can't run");
-
+        return isOverCome;
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "Treadmill " +
-                "distance " + getValue() + " metres";
+    public String printLet() {
+        return " overcome Let treadmill distance " + getValue() + " metres. ";
     }
-
-
 }
 

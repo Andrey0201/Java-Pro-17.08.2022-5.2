@@ -14,51 +14,47 @@ public class Main {
     private static Let[] arrayLets = null;
 
     public static void main(String[] args) {
+
         createParticipant();
         createLets();
+        Participant human = new Human("Andrey", 160, 56);
+        human.run();
+        Let wall = new Wall(50);
+        wall.overCome(human);
         actionAllParticipant();
         actionAllParticipantWithLimit();
-
-
     }
 
     private static void createParticipant() {
         arrayParticipant = new Participant[]{
-                new Human("Ivan", 115, 10),
-                new Robot("Galaxy", 130, 10),
-                new Cat("Bonya", 130, 11)
-        };
+                new Human("Ivan", 151, 20),
+                new Robot("Galaxy", 100, 60),
+                new Cat("Bonya", 160, 70)};
     }
 
     private static void createLets() {
         arrayLets = new Let[]{
-                new Treadmill(125),
-                new Wall(9),
-        };
+                new Treadmill(150),
+                new Wall(20),};
     }
 
     private static void actionAllParticipant() {
         for (Participant participant : arrayParticipant) {
             for (Let let : arrayLets) {
-                System.out.print(participant.toString());
                 let.overCome(participant);
             }
-
         }
-
     }
 
     private static void actionAllParticipantWithLimit() {
         for (Participant participant : arrayParticipant) {
             for (Let let : arrayLets) {
-                let.overCome(participant);
+                if (!let.overCome(participant)) {
+                    break;
+                }
             }
-
-
         }
-
     }
-
 }
 
 

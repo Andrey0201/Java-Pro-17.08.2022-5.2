@@ -7,11 +7,19 @@ public class Robot extends Participant {
         super(name, distanceLimitRun, limitJump);
     }
 
-
+    @Override
+    public void run() {
+        System.out.println("Robot " + getName() + " Run");
+    }
 
     @Override
-    public String toString() {
-        return super.toString() + "Robot " + name + " ";
+    public void jump() {
+        System.out.println("Robot " + getName() + " Jump");
+    }
+
+    @Override
+    public String printName() {
+        return "Participant robot " + getName();
     }
 }
 
