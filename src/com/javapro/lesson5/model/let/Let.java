@@ -1,5 +1,6 @@
 package com.javapro.lesson5.model.let;
 
+import com.javapro.lesson5.api.Overcomeable;
 import com.javapro.lesson5.model.participant.Participant;
 
 public abstract class Let implements Overcomeable {
